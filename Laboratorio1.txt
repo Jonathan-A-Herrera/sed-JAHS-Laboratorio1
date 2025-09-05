@@ -1,0 +1,58 @@
+1-¿Cuál es el punto más débil de PGP?
+
+PGP es muy fuerte criptográficamente ya que usa cifrado simétrico, asimétrico y funciones hash robustas, pero su punto más débil no está en las matemáticas, sino en el factor humano y la gestión de claves.
+
+Los principales puntos débiles son:
+Gestión de claves públicas
+Usabilidad:Es complejo para el usuario promedio, la generación, verificación, intercambio y revocación de claves es difícil.
+Revocación de claves: Si una clave privada se ve comprometida, la revocación no es automática ni sencilla; depende de que otros acepten y actualicen las listas de revocación.
+Seguridad de la clave privada: si la clave privada del usuario se roba o compromete (por malware, phishing o mala gestión), todo el sistema colapsa, aunque el cifrado en sí siga siendo fuerte.
+
+2-¿Cuándo es conveniente utilizar solamente cifrado simétrico?
+
+En casos como por ejemplo, comunicación en un canal cerrado y seguro, archivos locales o almacenamiento personal, alto rendimiento necesario y por último en sistemas con recursos limitados
+
+3- ¿En qué consiste el ciclo de vida del desarrollo de software seguro (etapa por etapa)?
+
+-Planificación / Requisitos
+
+Identificar requisitos funcionales y requisitos de seguridad (confidencialidad, integridad, disponibilidad, autenticación, autorización, trazabilidad).
+Análisis de amenazas iniciales: ¿qué atacantes podrían interesarse en el sistema?
+Definir estándares y normativas que el software debe cumplir (ej. GDPR, OWASP, ISO 27001).
+
+-Análisis
+Realizar modelado de amenazas 
+Revisar posibles vulnerabilidades relacionadas con la lógica de negocio.
+Documentar riesgos de seguridad desde el diseño.
+
+-Diseño
+Definir una arquitectura segura por diseño.
+Aplicar principios de seguridad: mínimo privilegio, defensa en profundidad, separación de responsabilidades.
+Selección de librerías, frameworks y protocolos seguros.
+Diseñar mecanismos de autenticación, autorización y manejo seguro de datos.
+
+-Implementación (Codificación)
+Uso de guías de codificación segura (ej. OWASP Secure Coding).
+Evitar vulnerabilidades clásicas: inyección SQL, XSS, buffer overflow, gestión insegura de contraseñas.
+Revisiones de código (code reviews) con enfoque en seguridad.
+Uso de análisis estático (SAST) para detectar errores de seguridad en el código.
+
+-Pruebas
+Pruebas funcionales + pruebas de seguridad.
+Tipos de pruebas:
+DAST (Dynamic Application Security Testing).
+Pentesting (pruebas de penetración).
+Fuzzing (entradas aleatorias para detectar fallos).
+Revisión de dependencias (SCA – Software Composition Analysis).
+
+-Despliegue
+Configuración segura de servidores, contenedores y redes.
+Aplicar parches y actualizaciones antes de liberar.
+Verificación de que no se filtren datos sensibles en logs o configuraciones.
+Uso de DevSecOps para integrar seguridad en CI/CD.
+
+-Mantenimiento / Operación
+Monitoreo continuo del sistema (detección de intrusos, logs, SIEM).
+Gestión de parches y actualizaciones de seguridad.
+Revisiones periódicas de cumplimiento normativo.
+Plan de respuesta a incidentes y recuperación ante desastres.
